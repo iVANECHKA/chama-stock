@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Quantity from '../item/Quantity'
 
-const CreateTodoField = ({setTodos}) => {
+const CreateProductField = ({setProducts}) => {
 
     const [title, setTitle] = useState('')
 
     const addTodo = (title) => {
-      setTodos(prev => [{ _id: Date.now().toString(), title }, ...prev,])
+      setProducts(prev => [{ _id: Date.now().toString(), title }, ...prev,])
       setTitle('')   
     }
 
@@ -26,4 +26,4 @@ const CreateTodoField = ({setTodos}) => {
   )
 }
 
-export default CreateTodoField
+export default CreateProductField
