@@ -9,6 +9,10 @@
     padding: 10px 20px 20px;
 }
 
+.bigContainer:last-child {
+    margin-bottom: 0;
+}
+
 .highRow {
     display: flex;
     justify-content: space-between;

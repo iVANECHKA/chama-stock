@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 360px;
+}
+
+.searchContainer {
+    width: 269px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #FFFFFF;
+    border-radius: 12px;
+    opacity: .4;
+    padding: 12px;
+}
+
+.icon {
+    width: 17.75px;
+    height: 17.75px;
+    margin-right: 8px;
+}
+
+.input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.button {
+    width: 85px;
+    height: 42px;
+    background: linear-gradient(to right, #EB4899, #5F2985);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+}
+
+.cross {
+    background-image: url('../../../../assets/cross.svg');
+    width: 16px;
+    height: 16px;
+}

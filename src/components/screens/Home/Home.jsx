@@ -1,5 +1,6 @@
 import ProductItem from "./ProductItem/ProductItem"
-import CreateProductField from "./CreateProductField/CreateProductField"
+import SearchField from "./SearchField/SearchField"
+import Tabs from "./Tabs/Tabs"
 import { useState, useEffect } from "react"
 import { supabase } from '../../../createClient'
 import styles from './Home.module.css'
@@ -37,7 +38,8 @@ const Home = () => {
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>SKLAD</h1>
-            <CreateProductField setProducts={setProducts} />
+            <SearchField />
+            <Tabs />
             {products.map(product => (
                 <ProductItem product={product} key={product.id} quantity={product.quantity} removeProducts={removeProducts} />
             ))}
