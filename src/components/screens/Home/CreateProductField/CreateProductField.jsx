@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Quantity from '../item/Quantity'
 
 const CreateProductField = ({setProducts}) => {
 

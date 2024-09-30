@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './Layout.module.css'
 
 const Layout = ({children}) => {
   return (
-    <div className='bg-zinc-900 min-h-screen py-10'>{children}</div>
+    <div className={styles.layout}>{children}</div>
   )
 }
 

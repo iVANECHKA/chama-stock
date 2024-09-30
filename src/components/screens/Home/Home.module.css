@@ -1,0 +1,19 @@
+.container {
+    color: white;
+    max-width: 366px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Matemasie', sans-serif;
+    font-size: 22.68px;
+    margin-bottom: 24px;
+    background: linear-gradient(90deg, #EB4899, #5F2985);
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+
+/* text-transparent bg-clip-text inline-block text-2xl mb-5 font-bigTitle bg-gradient-to-r from-[#EB4899] to-[#5F2985] */

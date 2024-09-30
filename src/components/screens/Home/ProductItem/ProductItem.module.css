@@ -1,0 +1,93 @@
+.bigContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    background-color: #191919;
+    border-radius: 24px;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 20px 20px;
+}
+
+.highRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.shopInfo {
+    display: flex;
+    align-items: center;
+}
+
+.edit {
+    width: 40px;
+    height: 40px;
+    background-image: url('../../../../assets/editBtn.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    /* background-color: #28AF21; */
+    margin-right: 6px;
+}
+
+.shop {
+    margin-right: 8px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.shopQuantity {
+    font-weight: 400;
+    font-size: 15px;
+    opacity: .5;
+}
+
+.lowRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 18px;
+    text-align: left;
+}
+
+.quantity {
+    width: 68px;
+    height: 30px;
+    background-color: #E2398D;
+    border-radius: 16.58px;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whiteColor {
+    background-color: white;
+}
+
+.blueColor {
+    background-color: rgb(22, 22, 169);
+}
+
+.orangeColor {
+    background-color: #f86605;
+}
+
+.yellowColor {
+    background-color: #FFD700;
+}
+
+.redColor {
+    background-color: red;
+}

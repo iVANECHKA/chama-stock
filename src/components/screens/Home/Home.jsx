@@ -1,8 +1,8 @@
-import TodoItem from "./item/ProductItem"
-import CreateProductField from "./create-todo-field/CreateProductField"
+import ProductItem from "./ProductItem/ProductItem"
+import CreateProductField from "./CreateProductField/CreateProductField"
 import { useState, useEffect } from "react"
 import { supabase } from '../../../createClient'
-
+import styles from './Home.module.css'
 
 const Home = () => {
 
@@ -23,25 +23,23 @@ const Home = () => {
 
     // Функция удаления продукта
     async function removeProducts(id) {
-        const response = await supabase
-            .from('products')
-            .delete()
-            .eq('id', id)
+        // const response = await supabase
+        //     .from('products')
+        //     .delete()
+        //     .eq('id', id)
 
-        if (response.status === 204) {
-            setProducts(products.filter(p => p.id != id))
-        } else {alert('Нихуя не получилось')}
+        // if (response.status === 204) {
+        //     setProducts(products.filter(p => p.id != id))
+        // } else {alert('Нихуя не получилось')}
 }
-
-    // const removeProducts = id => setProducts(products.filter(t => t._id != id))
 
 
     return (
-        <div className="text-white w-4/5 mx-auto">
-            <h1 className="text-2xl text-center mb-10 font-bold">ChamaStock</h1>
+        <div className={styles.container}>
+            <h1 className={styles.title}>SKLAD</h1>
             <CreateProductField setProducts={setProducts} />
             {products.map(product => (
-                <TodoItem product={product} key={product.id} quantity={product.quantity} removeProducts={removeProducts} />
+                <ProductItem product={product} key={product.id} quantity={product.quantity} removeProducts={removeProducts} />
             ))}
         </div>
     )
