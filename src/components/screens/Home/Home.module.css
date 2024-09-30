@@ -8,7 +8,7 @@
 .title {
     font-family: 'Matemasie', sans-serif;
     font-size: 22.68px;
-    margin-bottom: 24px;
+    margin: 24px 0 24px;
     background: linear-gradient(90deg, #EB4899, #5F2985);
     background-clip: text;
     color: transparent;
