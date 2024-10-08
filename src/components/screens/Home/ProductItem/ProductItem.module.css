@@ -9,6 +9,10 @@
     padding: 10px 20px 20px;
 }
 
+.bigContainerActive {
+    margin-bottom: 8px;
+}
+
 .bigContainer:last-child {
     margin-bottom: 0;
 }
@@ -36,7 +40,6 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    /* background-color: #28AF21; */
     margin-right: 6px;
 }
 
@@ -74,6 +77,55 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.changeRow {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 39px;
+    gap: 12px;
+}
+
+.inputContainer {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16.58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 157px;
+    padding: 9.5px 12px;
+}
+
+.input {
+    background-color: transparent;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.addButton {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    font-weight: 500;
+    width: 157px;
+    border-radius: 16.58px;
+}
+
+.showCompContainer {
+    background-color: rgba(25, 25, 25, 1);
+    border-radius: 24px;
+    margin-bottom: 16px;
+    padding: 14px 0;
+}
+
+.showCompText {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(226, 57, 141, 1);
+    text-wrap: nowrap;
 }
 
 .whiteColor {

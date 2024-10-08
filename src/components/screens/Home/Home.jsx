@@ -20,35 +20,22 @@ const Home = () => {
     }
 
 
-
+    // Вызываем товары 1 раз
     useEffect(() => {
         fetchProducts()
     }, [])
 
+    // Функция поиска
     const handleInputChange = (e) => { 
         const searchTerm = e.target.value;
         setSearchItem(searchTerm)
     
-        // filter the items using the apiUsers state
         const filteredItems = products.filter((product) =>
           product.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
     
         setFilteredProducts(filteredItems);
       }
-
-    // Функция удаления продукта
-//     async function removeProducts(id) {
-//         // const response = await supabase
-//         //     .from('products')
-//         //     .delete()
-//         //     .eq('id', id)
-
-//         // if (response.status === 204) {
-//         //     setProducts(products.filter(p => p.id != id))
-//         // } else {alert('Нихуя не получилось')}
-// }
-
 
     return (
         <div className={styles.container}>
