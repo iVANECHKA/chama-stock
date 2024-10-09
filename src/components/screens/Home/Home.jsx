@@ -9,6 +9,7 @@ const Home = () => {
 
 
     const [products, setProducts] = useState([])
+    const [comps, setComps] = useState([])
     const [searchItem, setSearchItem] = useState('')
     const [filteredProducts, setFilteredProducts] = useState([])
 
@@ -19,10 +20,16 @@ const Home = () => {
         setFilteredProducts(data)
     }
 
+    async function fetchComps() {
+        const { data } = await supabase.from('comps').select('*')
+        setComps(data)
+    }
+
 
     // Вызываем товары 1 раз
     useEffect(() => {
         fetchProducts()
+        fetchComps()
     }, [])
 
     // Функция поиска
@@ -43,7 +50,7 @@ const Home = () => {
             <SearchField handleInputChange={handleInputChange} searchItem={searchItem} />
             <Tabs />
             {filteredProducts.map(product => (
-                <ProductItem product={product} key={product.id} quantity={product.quantity} />
+                <ProductItem product={product} key={product.id} comps={comps} />
             ))}
         </div>
     )

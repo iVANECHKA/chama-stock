@@ -1,0 +1,65 @@
+.line {
+    width: 1px;
+    height: 13px;
+    background-color: rgba(226, 57, 141, 1);
+    margin: 8px auto 8px;
+}
+
+.container {
+    background-color: rgba(25, 25, 25, 1);
+    border-radius: 24px;
+    padding: 20px;
+}
+
+.highRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 43px;
+}
+
+.infoContainer {
+    display: flex;
+    align-items: center;    
+}
+
+.uiIcon {
+    background-image: url(../../../../../assets/uiROMB.svg);
+    width: 9.3px;
+    height: 9.3px;
+    margin-right: 6.7px;
+}
+
+.infoName {
+    font-size: 15px;
+    font-weight: 400;
+    opacity: .5;
+}
+
+.editIcon {
+    background-image: url(../../../../../assets/editBtn.svg);
+    width: 16px;
+    height: 16px;
+}
+
+.lowRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.compName {
+    font-size: 18px;
+    opacity: .8;
+    font-weight: 500;
+}
+
+.quantityContainer {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16.58px;
+    padding: 5.5px 20.5px;
+}
+
+.compQuantity {
+    font-size: 16px;
+    font-weight: 400;
+}

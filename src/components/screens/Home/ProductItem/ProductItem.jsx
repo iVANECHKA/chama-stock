@@ -1,13 +1,15 @@
 import React from 'react'
 import { useState } from "react"
 import { easings, useSpring, a } from '@react-spring/web'
+import ProductComps from './ProductComps/ProductComps'
 import styles from './ProductItem.module.css'
 
-function ProductItem({ product }) {
+function ProductItem({ product, comps }) {
 
   const [isActive, setIsActive] = useState(false)
+  const [isCompActive, setIsCompActive] = useState(false)
 
-  const extendCompAnimation = useSpring({
+  const extendProductAnimation = useSpring({
     maxHeight: isActive ? 100 : 0,
     opacity: isActive ? 1 : 0,
     marginTop: isActive ? 39 : 0,
@@ -22,6 +24,11 @@ function ProductItem({ product }) {
     opacity: isActive ? 1 : 0,
     config: { easing: easings.easeInOutBack, duration: 650 },
   })
+  // Раскрывает карточку и закрывает список компонентов
+  function divOpener() {
+    setIsActive(!isActive);
+    setIsCompActive(false);
+  }
  
 
   const color = () => {
@@ -40,8 +47,9 @@ function ProductItem({ product }) {
 
   return (
     <>
-      <div className={`${styles.bigContainer} ${isActive ? styles.bigContainerActive : ''}`}>
-        <div onClick={() => setIsActive(!isActive)}>
+
+      <div className={`${styles.bigContainer} ${isActive ? styles.bigContainerActive : ''} ${isCompActive ? styles.bigContainerActive2 : ''}`}>
+        <div onClick={divOpener}>
           <div className={styles.highRow}>
             <div className={styles.shopInfo}>
               <div className={`${styles.circle} ${color()}`}></div>
@@ -55,18 +63,18 @@ function ProductItem({ product }) {
             <div className={styles.quantity}>{product.quantity}</div>
           </div>
         </div>
-
-        <a.div style={extendCompAnimation} className={styles.changeRow}>
+        <a.div style={extendProductAnimation} className={styles.changeRow}>
           <div className={styles.inputContainer}>
             <input type="text" defaultValue={0} maxLength={5} className={styles.input} />
           </div>
           <button className={styles.addButton}>Добавить</button>
         </a.div>
-
       </div>
-
-        <a.div style={showCompButtonAnimation} className={styles.showCompContainer}>
-          <p className={styles.showCompText}>Показать компоненты</p>
+        {comps.slice(0,3).map(comp => (
+          <ProductComps comp={comp} key={comp.id} isCompActive={isCompActive} />
+        ))}
+        <a.div onClick={() => setIsCompActive(!isCompActive)} style={showCompButtonAnimation} className={`${styles.showCompContainer} ${isCompActive ? styles.showCompContainerActive : ''}`}>
+          <p className={`${styles.showCompText} ${isCompActive ? styles.showCompTextActive : ''}`}>Показать компоненты</p>
         </a.div>
 
     </>
