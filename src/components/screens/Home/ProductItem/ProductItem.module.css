@@ -90,23 +90,20 @@
     gap: 12px;
 }
 
-.inputContainer {
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 16.58px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 157px;
-    padding: 9.5px 12px;
-}
 
 .input {
     background-color: transparent;
     text-align: center;
     font-size: 16px;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16.58px;
     outline: none;
-    width: 100%;
+    padding: 9.5px 0;
+    width: 159%;
+}
+
+.input:focus {
+    border: 1px solid rgba(226, 57, 141, 1);
 }
 
 .addButton {
@@ -114,8 +111,16 @@
     color: rgba(255, 255, 255, 0.3);
     font-size: 16px;
     font-weight: 500;
-    width: 157px;
+    width: 100%;
+    padding: 12.5px 41px;
     border-radius: 16.58px;
+    transition: .3s linear;
+}
+
+.addButtonActive {
+    background-color: rgba(226, 57, 141, 1);
+    color: white;
+    transition: .3s linear;
 }
 
 .showCompContainer {

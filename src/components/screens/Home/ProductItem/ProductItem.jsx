@@ -29,7 +29,7 @@ function ProductItem({ product, comps }) {
     setIsActive(!isActive);
     setIsCompActive(false);
   }
- 
+
 
   const color = () => {
     if (product.shop == 'Any') {
@@ -42,6 +42,20 @@ function ProductItem({ product, comps }) {
       return styles.yellowColor
     } else {
       return styles.redColor
+    }
+  }
+
+  const [value, setValue] = useState('')
+
+  const buttonValid = (event) => {
+    setValue(event.target.value)
+  }
+
+  function buttonCheck() {
+    if (value > 0) {
+      return true;
+    } else {
+      return false;
     }
   }
 
@@ -64,18 +78,16 @@ function ProductItem({ product, comps }) {
           </div>
         </div>
         <a.div style={extendProductAnimation} className={styles.changeRow}>
-          <div className={styles.inputContainer}>
-            <input type="text" defaultValue={0} maxLength={5} className={styles.input} />
-          </div>
-          <button className={styles.addButton}>Добавить</button>
+          <input onChange={buttonValid} type="text" defaultValue={0} maxLength={5} className={styles.input} />
+          <button className={`${styles.addButton} ${buttonCheck() ? styles.addButtonActive : ''}`}>Добавить</button>
         </a.div>
       </div>
-        {comps.slice(0,3).map(comp => (
-          <ProductComps comp={comp} key={comp.id} isCompActive={isCompActive} />
-        ))}
-        <a.div onClick={() => setIsCompActive(!isCompActive)} style={showCompButtonAnimation} className={`${styles.showCompContainer} ${isCompActive ? styles.showCompContainerActive : ''}`}>
-          <p className={`${styles.showCompText} ${isCompActive ? styles.showCompTextActive : ''}`}>Показать компоненты</p>
-        </a.div>
+      {comps.slice(0, 3).map(comp => (
+        <ProductComps comp={comp} key={comp.id} isCompActive={isCompActive} />
+      ))}
+      <a.div onClick={() => setIsCompActive(!isCompActive)} style={showCompButtonAnimation} className={`${styles.showCompContainer} ${isCompActive ? styles.showCompContainerActive : ''}`}>
+        <p className={`${styles.showCompText} ${isCompActive ? styles.showCompTextActive : ''}`}>Показать компоненты</p>
+      </a.div>
 
     </>
   )
